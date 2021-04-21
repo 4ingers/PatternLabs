@@ -3,12 +3,12 @@ using PatternLabs.Lab1.Bridge.Implementations;
 
 namespace PatternLabs.AbstractFactory
 {
-    public class SpicyOven : IMultiOven
+    public class SpicyOven : MultiOven
     {
-        public Burrito CookBurrito() => new Burrito(new Chilli());
+        public override Burrito CookBurrito() => new Burrito(new Chilli());
 
-        public Doner CookDoner() => new Doner(new Chilli());
+        public override Doner CookDoner() => new Doner(new Chilli());
 
-        public Shawarma CookShawarma() => new Shawarma(new Chilli());
+        public override Shawarma CookShawarma() => new Shawarma(new Chilli());
     }
 }

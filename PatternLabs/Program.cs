@@ -7,25 +7,11 @@ namespace PatternLabs
 {
     class Program
     {
+        public static string env = "smooth";
+
         static void Main(string[] args)
         {
-            IMultiOven smoothOven = new SmoothOven();
-            IMultiOven spicyOven = new SpicyOven();
-
-            SuperSandwich[] superSandwiches = new SuperSandwich[]
-            {
-                smoothOven.CookBurrito(),
-                spicyOven.CookBurrito(),
-                smoothOven.CookDoner(),
-                spicyOven.CookDoner(),
-                smoothOven.CookShawarma(),
-                spicyOven.CookShawarma(),
-            };
-
-            foreach (SuperSandwich superSandwich in superSandwiches)
-            {
-                Console.WriteLine(superSandwich.Description());
-            }
+            
         }
     }
 }
