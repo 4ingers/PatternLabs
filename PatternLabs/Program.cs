@@ -7,9 +7,7 @@ namespace PatternLabs
 {
     class Program
     {
-        public static string env = "smooth";
-
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             
         }
