@@ -1,17 +1,14 @@
-﻿using PatternLabs.AbstractFactory;
-using PatternLabs.Lab1.Bridge.Abstractions;
-using PatternLabs.Lab1.Bridge.Implementations;
-using System;
+﻿using PatternLabs.Eatery.Staff;
 
 namespace PatternLabs
 {
     class Program
     {
-        public static string env = "smooth";
-
         static void Main(string[] args)
         {
-            
+            Chief chief = new Chief();
+            Cooker cooker = new Cooker();
+            chief.CookThickDoner(cooker).Tell();
         }
     }
 }
