@@ -6,9 +6,6 @@ namespace PatternLabs.Sortings.Strategies
 {
     public class MergeSort<T> : ISortingStrategy<T>
     {
-        public void Sort(T[] array)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }
