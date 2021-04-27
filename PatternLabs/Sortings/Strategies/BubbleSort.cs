@@ -6,14 +6,19 @@ namespace PatternLabs.Sortings.Strategies
 {
     public class BubbleSort<T> : ISortingStrategy<T>
     {
-        public BubbleSort(Func<T, object> selector, Func<object, int> comparer)
+        public void Sort(List<T> list, Func<T, T, int> comparer)
         {
-
-        }
-
-        public void Sort(T[] array, bool descending)
-        {
-            throw new NotImplementedException();
+            int n = list.Count;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (comparer(list[j], list[j + 1]) == 1)
+                    {
+                        ISortingStrategy<T>.Swap(list, j, j + 1);
+                    }
+                }
+            }
         }
     }
 }

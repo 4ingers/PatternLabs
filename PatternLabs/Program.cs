@@ -1,4 +1,6 @@
 ﻿using PatternLabs.Eatery.Staff;
+using PatternLabs.Sortings;
+using PatternLabs.Sortings.Strategies;
 using PatternLabs.Validation.Builders;
 using PatternLabs.Validation.ExampleClasses;
 using PatternLabs.Validation.Rules;
@@ -10,7 +12,7 @@ namespace PatternLabs
     {
         static void Main(string[] args)
         {
-            Lab4();
+            Lab3();
         }
 
         static void Lab1()
@@ -18,6 +20,22 @@ namespace PatternLabs
             Chief chief = new Chief();
             Cooker cooker = new Cooker();
             chief.CookThickDoner(cooker).Tell();
+        }
+
+        static void Lab3()
+        {
+            Func<int, int, int> comparer = (x, y) => x.CompareTo(y);
+            Collection<int> collection1 = new Collection<int>
+            {
+                6, 4, 7, 8, 5, 7, 3
+            };
+            collection1.Comparer = comparer;
+            collection1.Print();
+            Collection<int> collection2 = (Collection<int>)collection1.Clone();
+            collection2.Comparer = comparer;
+            collection2.SortingStrategy = new QuickSort<int>();
+            collection2.Sort();
+            collection2.Print();
         }
 
         static void Lab4()
